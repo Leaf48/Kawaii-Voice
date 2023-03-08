@@ -1,10 +1,16 @@
 from voice import Speech2Text
 from keyListener import KeyListener
 from recorder import Recorder
+from voicevox import Voicevox
+from pydub import AudioSegment
+from pydub.playback import play
+import time
+
 
 # Create Instances
 KEYLISTENER = KeyListener("s")
-SPEECH2TEXT = Speech2Text()
+SPEECH2TEXT = Speech2Text("medium")
+VOICEVOX = Voicevox()
 
 if __name__ == "__main__":
     print("Press {0} to start recording...".format(KEYLISTENER.targetKey))
@@ -24,5 +30,11 @@ if __name__ == "__main__":
             r.stopRecording()
             r.saveAsWav()
 
-        result = SPEECH2TEXT.ToText()
-        print(result)
+            result = SPEECH2TEXT.ToText()
+            result = result["text"]
+
+            VOICEVOX.text2Speech(result)
+            
+            sound = AudioSegment.from_wav('./audio/output.wav')
+            play(sound)
+

@@ -1,4 +1,5 @@
 import whisper
+import json
 
 class Speech2Text:
     def __init__(self, modelname="small") -> None:
