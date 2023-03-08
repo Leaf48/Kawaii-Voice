@@ -3,9 +3,21 @@
 # Kawaii-Voice
 Kawaii-Voice converts inputed voice to Anime voice using Voicevox.
 ```
-+------------+      +---------+      +----------+      +--------+
-| Microphone | ---> | Whisper | ---> | Voicevox | ---> | Output |
-+------------+      +---------+      +----------+      +--------+
+                   +---------------------+
+                   |     Microphone      |
+                   +---------------------+
+                             |
+                             v
+       +---------------------+---------------------+
+       |       Whisper       |      Voicevox       |
+       |   (Pre-processing)  |        (TTS)        |
+       +---------------------+---------------------+
+                             |
+                             v
+                   +---------------------+
+                   |      Output(PC)     |
+                   |      Speakers       |
+                   +---------------------+
 ```
 
 # Environment
