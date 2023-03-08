@@ -18,7 +18,7 @@ The above has been confirmed to work.
 Small size of model is default.
 
 2. Launch Voicevox On docker
-[参照](https://github.com/VOICEVOX/voicevox_engine#docker-%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8 "参照")
+[Reference](https://github.com/VOICEVOX/voicevox_engine#docker-%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8 "Reference")
 
 ```d
 docker pull voicevox/voicevox_engine:nvidia-ubuntu20.04-latest
