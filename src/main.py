@@ -1,8 +1,37 @@
 import pyaudio
 import wave
-import keyboard
+# import keyboard
+from pynput import keyboard
 from voice import Speech2Text
 
+targetKey = 's'
+targetKey_state = False
+
+def on_press(key):
+    global targetKey_state
+    try:
+        if key.char == targetKey:
+            targetKey_state = True
+        # print("Key {0} Pressed!".format(key.char))
+
+    except AttributeError:
+        # print("Special Key {0} Pressed!".format(key))
+        pass
+
+def on_release(key):
+    global targetKey_state
+    try:
+        if key.char == targetKey:
+            targetKey_state = False
+        # print("Key {0} Released!".format(key.char))
+
+    except AttributeError:
+        # print("Special Key {0} Released!".format(key))
+        pass
+    
+listener = keyboard.Listener(on_press=on_press, on_release=on_release)
+listener.start()
+        
 class Recorder:
     def __init__(self) -> None:
         # Set parameters for recording
@@ -46,13 +75,14 @@ if __name__ == "__main__":
     s = Speech2Text()
 
     while True:
+        print("Running")
         r = Recorder()
         while True:
-            if keyboard.is_pressed('s'):
+            if targetKey_state:
                 print("Recording...")
                 break
         
-        while keyboard.is_pressed('s'):
+        while targetKey_state:
             data = r.stream.read(r.CHUNK)
             r.frames.append(data)
         else:
