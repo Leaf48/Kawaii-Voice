@@ -1,3 +1,7 @@
+"""
+This is a listener of key detection.
+"""
+
 from pynput import keyboard
 
 class KeyListener:
@@ -15,18 +19,14 @@ class KeyListener:
         try:
             if key.char == self.targetKey:
                 self.targetKey_state = True
-            # print("Key {0} Pressed!".format(key.char))
 
         except AttributeError:
-            # print("Special Key {0} Pressed!".format(key))
             pass
 
     def on_release(self, key):
         try:
             if key.char == self.targetKey:
                 self.targetKey_state = False
-            # print("Key {0} Released!".format(key.char))
 
         except AttributeError:
-            # print("Special Key {0} Released!".format(key))
             pass
