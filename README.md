@@ -1,3 +1,5 @@
+![Kawaiibanner2](https://user-images.githubusercontent.com/58620209/223855069-767a7f95-33ba-4617-820c-061e2dec1007.png)
+
 # Kawaii-Voice
 マイクに入力した声を、Voicevoxを用い音声を変換します。
 Kawaii-Voice converts inputed voice to Anime voice using Voicevox.
