@@ -1,6 +1,6 @@
 src/__pycache___
-audio/*.wav
-audio/*.mp3
+./audio/*.wav
+./audio/*.mp3
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -131,3 +131,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+*.wav
