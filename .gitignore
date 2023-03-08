@@ -1,6 +1,4 @@
 src/__pycache___
-./audio/*.wav
-./audio/*.mp3
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
